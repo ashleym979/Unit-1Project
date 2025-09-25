@@ -1,15 +1,45 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scan= new Scanner(System.in);
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("|Note! do not use any symbols when inputting data! (no $ or %|");
+        System.out.println("--------------------------------------------------------------");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+
+
+
+        System.out.println("Enter your Bill($): ");
+        double totalBill= scan.nextDouble();
+        System.out.println("Tip Percent: ");
+        int tip= scan.nextInt();
+        System.out.println("Number of People: ");
+        int people= scan.nextInt();
+
+
+
+
+        double tipDeci= (double) tip/100;
+        double billPerPerson= (double)((int)(totalBill/people*100))/100;
+        double tipPerPerson= (double)((int)(billPerPerson*tipDeci*100))/100;
+        double totalTip= tipPerPerson*people;
+        double tipBill= (double)((int)((billPerPerson+tipPerPerson)*100))/100;
+        double totalTipBill= (double)((int)((totalBill+totalTip)*100))/100;
+
+
+
+
+        System.out.println("-------------------------------------");
+        System.out.println("|Total Tip Amount: $"+totalTip);
+        System.out.println("-------------------------------------");
+        System.out.println("|Total bill cost: $"+totalTipBill);
+        System.out.println("-------------------------------------");
+        System.out.println("|Tip per person: $"+tipPerPerson);
+        System.out.println("-------------------------------------");
+        System.out.println("|Total bill per person: $"+tipBill);
+        System.out.println("-------------------------------------");
     }
 }
+
+
+
