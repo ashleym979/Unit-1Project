@@ -22,7 +22,7 @@ public class Main {
         double tipDeci= (double) tip/100;
         double billPerPerson= (double)((int)(totalBill/people*100))/100;
         double tipPerPerson= (double)((int)(billPerPerson*tipDeci*100))/100;
-        double totalTip= tipPerPerson*people;
+        double totalTip= (double)((int)(tipPerPerson*people*100))/100;
         double tipBill= (double)((int)((billPerPerson+tipPerPerson)*100))/100;
         double totalTipBill= (double)((int)((totalBill+totalTip)*100))/100;
 
